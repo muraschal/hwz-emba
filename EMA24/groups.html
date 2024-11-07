@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test CSV Laden</title>
+</head>
+<body>
+    <h1>CSV Laden Test</h1>
+    <button id="loadCsvButton">CSV Laden</button>
+
+    <script>
+        document.getElementById('loadCsvButton').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/data/groups.csv');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const csvText = await response.text();
+                const rows = csvText.split('\n').slice(1); // Header überspringen
+
+                const emojiGroups = rows.map(row => {
+                    const [emoji, name, color] = row.split(',');
+                    return { emoji, name, color };
+                }).filter(group => group.emoji && group.name && group.color);
+
+                console.log('Emoji-Gruppen geladen:', emojiGroups);
+
+                if (emojiGroups.length === 0) {
+                    console.error('Keine gültigen Emoji-Gruppen gefunden.');
+                }
+            } catch (error) {
+                console.error('Fehler beim Laden der Emoji-Gruppen:', error);
+            }
+        });
+    </script>
+</body>
+</html>
