@@ -1,6 +1,6 @@
-# EMBA Gruppengenerator
+# HWZ EMBA 2024 Gruppengenerator
 
-Ein Tool zur zufälligen Gruppenerstellung für EMA24-Teilnehmer.
+Ein Tool zur zufälligen Gruppenerstellung für EMBA-Teilnehmer.
 
 ## Features
 - Lädt Teilnehmerdaten aus CSV
