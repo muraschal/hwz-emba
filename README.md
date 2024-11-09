@@ -1,4 +1,4 @@
-# EMA24 Gruppengenerator
+# EMBA Gruppengenerator
 
 Ein Tool zur zufälligen Gruppenerstellung für EMA24-Teilnehmer.
 
