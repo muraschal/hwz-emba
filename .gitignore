@@ -1,0 +1,11 @@
+# IDE/Editor Dateien
+.vscode/
+.idea/
+*.sublime-*
+
+# Temporäre Dateien
+.DS_Store
+Thumbs.db
+
+# Node Module (falls Sie später welche verwenden)
+node_modules/
